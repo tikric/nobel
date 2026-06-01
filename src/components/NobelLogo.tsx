@@ -1,5 +1,5 @@
 import React from 'react';
-import logoAsset from '@/assets/images/logo.png';
+import logoAsset from '@/assets/images/nobel_logo_1780349909238.png';
 
 interface NobelLogoProps {
   className?: string;

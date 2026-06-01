@@ -2,7 +2,7 @@ import * as React from "react";
 import { Mail, Lock, ArrowRight, User, RefreshCw, Check, CheckCircle2, ShieldCheck, HelpCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import NobelLogo from "./NobelLogo";
-import erikaPortraitAsset from '@/assets/images/erika.png';
+import erikaPortraitAsset from '@/assets/images/erika_portrait_1780340940376.png';
 
 interface LoginGateProps {
   onSuccess: () => void;
