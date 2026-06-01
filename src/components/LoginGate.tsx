@@ -2,8 +2,7 @@ import * as React from "react";
 import { Mail, Lock, ArrowRight, User, RefreshCw, Check, CheckCircle2, ShieldCheck, HelpCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import NobelLogo from "./NobelLogo";
-import erikaPortraitAsset from '@/assets/images/erika_portrait_1780340940376.png';
-import { getImagePath } from '../utils/image-path';
+import erikaPortraitAsset from '@/assets/images/erika.png';
 
 interface LoginGateProps {
   onSuccess: () => void;
@@ -17,10 +16,6 @@ export default function LoginGate({ onSuccess, onCancel }: LoginGateProps) {
   const [isLoading, setIsLoading] = React.useState(false);
   const [view, setView] = React.useState<"login" | "forgot" | "sent_email" | "reset_password">("login");
   
-  // Erika Image Safe Pathing Resolver
-  const [erikaSrc, setErikaSrc] = React.useState(() => getImagePath('imagens/erika.png'));
-  const [erikaFailed, setErikaFailed] = React.useState(false);
-
   // Local storage based credentials management so it persists and is modifiable!
   const [storedCredentials, setStoredCredentials] = React.useState(() => {
     if (typeof window !== "undefined") {
@@ -215,12 +210,9 @@ export default function LoginGate({ onSuccess, onCancel }: LoginGateProps) {
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-800 shrink-0 overflow-hidden bg-slate-100 flex items-center justify-center">
                       <img 
-                        src={erikaFailed ? erikaPortraitAsset : erikaSrc} 
+                        src={erikaPortraitAsset} 
                         alt="Erika" 
                         className="w-full h-full object-cover"
-                        onError={() => {
-                          setErikaFailed(true);
-                        }}
                       />
                     </div>
                     <div className="text-[10px] text-slate-500 text-left">

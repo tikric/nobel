@@ -27,8 +27,7 @@ import {
 import { motion } from 'motion/react';
 import { landingServices, landingTestimonials } from '../data';
 import NobelLogo from './NobelLogo';
-import erikaPortraitAsset from '@/assets/images/erika_portrait_1780340940376.png';
-import { getImagePath } from '../utils/image-path';
+import erikaPortraitAsset from '@/assets/images/erika.png';
 
 interface LandingPageProps {
   onEnterPlatform: () => void;
@@ -36,10 +35,6 @@ interface LandingPageProps {
 }
 
 export default function LandingPage({ onEnterPlatform, informativos }: LandingPageProps) {
-  // Erika Image Safe Pathing Resolver
-  const [erikaSrc, setErikaSrc] = useState(() => getImagePath('imagens/erika.png'));
-  const [erikaFailed, setErikaFailed] = useState(false);
-
   // Contact Form State
   const [formData, setFormData] = useState({
     nome: '',
@@ -321,13 +316,10 @@ export default function LandingPage({ onEnterPlatform, informativos }: LandingPa
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37] to-[#0C3E26] rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-all duration-300"></div>
                 <img 
-                  src={erikaFailed ? erikaPortraitAsset : erikaSrc} 
+                  src={erikaPortraitAsset} 
                   alt="Érika - Diretora e Contadora Nobel" 
                   referrerPolicy="no-referrer"
                   className="w-full max-w-[340px] h-auto object-cover rounded-2xl shadow-lg border-4 border-white relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
-                  onError={() => {
-                    setErikaFailed(true);
-                  }}
                 />
               </div>
               <div className="text-center z-10 bg-[#0C3E26]/10 px-4 py-2.5 rounded-xl border border-[#0C3E26]/10 shadow-sm max-w-[340px] w-full flex flex-col items-center justify-center">
