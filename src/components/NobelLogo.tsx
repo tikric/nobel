@@ -11,7 +11,7 @@ export default function NobelLogo({ className = "h-8", isDarkTheme = false }: No
   if (!imgError) {
     return (
       <img 
-        src="/imagens/logo.png" 
+        src="./imagens/logo.png" 
         alt="Contabilidade Nobel" 
         className={`${className} object-contain`}
         onError={() => setImgError(true)}

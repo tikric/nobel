@@ -315,13 +315,13 @@ export default function LandingPage({ onEnterPlatform, informativos }: LandingPa
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37] to-[#0C3E26] rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-all duration-300"></div>
                 <img 
-                  src="/imagens/erika.png" 
+                  src="./imagens/erika.png" 
                   alt="Érika - Diretora e Contadora Nobel" 
                   referrerPolicy="no-referrer"
                   className="w-full max-w-[340px] h-auto object-cover rounded-2xl shadow-lg border-4 border-white relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = "/src/assets/images/erika_portrait_1780340940376.png";
+                    e.currentTarget.src = "./imagens/erika.png";
                   }}
                 />
               </div>

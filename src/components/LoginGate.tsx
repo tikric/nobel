@@ -209,12 +209,12 @@ export default function LoginGate({ onSuccess, onCancel }: LoginGateProps) {
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-800 shrink-0 overflow-hidden bg-slate-100 flex items-center justify-center">
                       <img 
-                        src="/imagens/erika.png" 
+                        src="./imagens/erika.png" 
                         alt="Erika" 
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           e.currentTarget.onerror = null;
-                          e.currentTarget.src = "/src/assets/images/erika_portrait_1780340940376.png";
+                          e.currentTarget.src = "./imagens/erika.png";
                         }}
                       />
                     </div>
