@@ -27,6 +27,7 @@ import {
 import { motion } from 'motion/react';
 import { landingServices, landingTestimonials } from '../data';
 import NobelLogo from './NobelLogo';
+import erikaPortraitAsset from '@/assets/images/erika_portrait_1780340940376.png';
 
 interface LandingPageProps {
   onEnterPlatform: () => void;
@@ -34,6 +35,24 @@ interface LandingPageProps {
 }
 
 export default function LandingPage({ onEnterPlatform, informativos }: LandingPageProps) {
+  // Erika Image Safe Pathing Resolver
+  const [erikaSrcIdx, setErikaSrcIdx] = useState(0);
+  const erikaPathsCand = [
+    "./imagens/erika.png",
+    "imagens/erika.png",
+    "/nobel/imagens/erika.png",
+    "./imagens/erika.PNG",
+    "imagens/erika.PNG",
+    "/nobel/imagens/erika.PNG",
+    "./imagens/Erika.png",
+    "imagens/Erika.png",
+    "./imagens/erika.jpg",
+    "./imagens/erika.jpeg",
+    erikaPortraitAsset,
+    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600",
+    "/imagens/erika.png"
+  ];
+
   // Contact Form State
   const [formData, setFormData] = useState({
     nome: '',
@@ -315,13 +334,12 @@ export default function LandingPage({ onEnterPlatform, informativos }: LandingPa
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37] to-[#0C3E26] rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-all duration-300"></div>
                 <img 
-                  src="./imagens/erika.png" 
+                  src={erikaPathsCand[erikaSrcIdx] || erikaPortraitAsset} 
                   alt="Érika - Diretora e Contadora Nobel" 
                   referrerPolicy="no-referrer"
                   className="w-full max-w-[340px] h-auto object-cover rounded-2xl shadow-lg border-4 border-white relative z-10 transition-transform duration-300 group-hover:scale-[1.02]"
-                  onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = "./imagens/erika.png";
+                  onError={() => {
+                    setErikaSrcIdx(prev => prev + 1);
                   }}
                 />
               </div>

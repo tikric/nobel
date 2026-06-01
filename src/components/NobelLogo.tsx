@@ -1,4 +1,5 @@
 import React from 'react';
+import logoAsset from '@/assets/images/nobel_logo_1780349909238.png';
 
 interface NobelLogoProps {
   className?: string;
@@ -6,15 +7,30 @@ interface NobelLogoProps {
 }
 
 export default function NobelLogo({ className = "h-8", isDarkTheme = false }: NobelLogoProps) {
-  const [imgError, setImgError] = React.useState(false);
+  const [logoSrcIdx, setLogoSrcIdx] = React.useState(0);
+  
+  const possiblePaths = [
+    "./imagens/logo.png",
+    "imagens/logo.png",
+    "/nobel/imagens/logo.png",
+    "./imagens/logo.PNG",
+    "imagens/logo.PNG",
+    "/nobel/imagens/logo.PNG",
+    "./imagens/Logo.png",
+    "imagens/Logo.png",
+    logoAsset, // The bundled relative asset compiled by Vite 
+    "/imagens/logo.png"
+  ];
 
-  if (!imgError) {
+  const currentSrc = possiblePaths[logoSrcIdx];
+
+  if (logoSrcIdx < possiblePaths.length) {
     return (
       <img 
-        src="./imagens/logo.png" 
+        src={currentSrc} 
         alt="Contabilidade Nobel" 
         className={`${className} object-contain`}
-        onError={() => setImgError(true)}
+        onError={() => setLogoSrcIdx(prev => prev + 1)}
         referrerPolicy="no-referrer"
       />
     );

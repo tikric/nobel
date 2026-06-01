@@ -2,6 +2,7 @@ import * as React from "react";
 import { Mail, Lock, ArrowRight, User, RefreshCw, Check, CheckCircle2, ShieldCheck, HelpCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import NobelLogo from "./NobelLogo";
+import erikaPortraitAsset from '@/assets/images/erika_portrait_1780340940376.png';
 
 interface LoginGateProps {
   onSuccess: () => void;
@@ -15,6 +16,24 @@ export default function LoginGate({ onSuccess, onCancel }: LoginGateProps) {
   const [isLoading, setIsLoading] = React.useState(false);
   const [view, setView] = React.useState<"login" | "forgot" | "sent_email" | "reset_password">("login");
   
+  // Erika Image Safe Pathing Resolver
+  const [erikaSrcIdx, setErikaSrcIdx] = React.useState(0);
+  const erikaPathsCand = [
+    "./imagens/erika.png",
+    "imagens/erika.png",
+    "/nobel/imagens/erika.png",
+    "./imagens/erika.PNG",
+    "imagens/erika.PNG",
+    "/nobel/imagens/erika.PNG",
+    "./imagens/Erika.png",
+    "imagens/Erika.png",
+    "./imagens/erika.jpg",
+    "./imagens/erika.jpeg",
+    erikaPortraitAsset,
+    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600",
+    "/imagens/erika.png"
+  ];
+
   // Local storage based credentials management so it persists and is modifiable!
   const [storedCredentials, setStoredCredentials] = React.useState(() => {
     if (typeof window !== "undefined") {
@@ -209,12 +228,11 @@ export default function LoginGate({ onSuccess, onCancel }: LoginGateProps) {
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-800 shrink-0 overflow-hidden bg-slate-100 flex items-center justify-center">
                       <img 
-                        src="./imagens/erika.png" 
+                        src={erikaPathsCand[erikaSrcIdx] || erikaPortraitAsset} 
                         alt="Erika" 
                         className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.currentTarget.onerror = null;
-                          e.currentTarget.src = "./imagens/erika.png";
+                        onError={() => {
+                          setErikaSrcIdx(prev => prev + 1);
                         }}
                       />
                     </div>
