@@ -3,6 +3,7 @@ import { Mail, Lock, ArrowRight, User, RefreshCw, Check, CheckCircle2, ShieldChe
 import { motion, AnimatePresence } from "motion/react";
 import NobelLogo from "./NobelLogo";
 import erikaPortraitAsset from '@/assets/images/erika_portrait_1780340940376.png';
+import { getImagePath } from '../utils/image-path';
 
 interface LoginGateProps {
   onSuccess: () => void;
@@ -17,22 +18,8 @@ export default function LoginGate({ onSuccess, onCancel }: LoginGateProps) {
   const [view, setView] = React.useState<"login" | "forgot" | "sent_email" | "reset_password">("login");
   
   // Erika Image Safe Pathing Resolver
-  const [erikaSrcIdx, setErikaSrcIdx] = React.useState(0);
-  const erikaPathsCand = [
-    "./imagens/erika.png",
-    "imagens/erika.png",
-    "/nobel/imagens/erika.png",
-    "./imagens/erika.PNG",
-    "imagens/erika.PNG",
-    "/nobel/imagens/erika.PNG",
-    "./imagens/Erika.png",
-    "imagens/Erika.png",
-    "./imagens/erika.jpg",
-    "./imagens/erika.jpeg",
-    erikaPortraitAsset,
-    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600",
-    "/imagens/erika.png"
-  ];
+  const [erikaSrc, setErikaSrc] = React.useState(() => getImagePath('imagens/erika.png'));
+  const [erikaFailed, setErikaFailed] = React.useState(false);
 
   // Local storage based credentials management so it persists and is modifiable!
   const [storedCredentials, setStoredCredentials] = React.useState(() => {
@@ -228,11 +215,11 @@ export default function LoginGate({ onSuccess, onCancel }: LoginGateProps) {
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-800 shrink-0 overflow-hidden bg-slate-100 flex items-center justify-center">
                       <img 
-                        src={erikaPathsCand[erikaSrcIdx] || erikaPortraitAsset} 
+                        src={erikaFailed ? erikaPortraitAsset : erikaSrc} 
                         alt="Erika" 
                         className="w-full h-full object-cover"
                         onError={() => {
-                          setErikaSrcIdx(prev => prev + 1);
+                          setErikaFailed(true);
                         }}
                       />
                     </div>

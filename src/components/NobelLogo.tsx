@@ -1,5 +1,6 @@
 import React from 'react';
 import logoAsset from '@/assets/images/nobel_logo_1780349909238.png';
+import { getImagePath } from '../utils/image-path';
 
 interface NobelLogoProps {
   className?: string;
@@ -7,30 +8,26 @@ interface NobelLogoProps {
 }
 
 export default function NobelLogo({ className = "h-8", isDarkTheme = false }: NobelLogoProps) {
-  const [logoSrcIdx, setLogoSrcIdx] = React.useState(0);
-  
-  const possiblePaths = [
-    "./imagens/logo.png",
-    "imagens/logo.png",
-    "/nobel/imagens/logo.png",
-    "./imagens/logo.PNG",
-    "imagens/logo.PNG",
-    "/nobel/imagens/logo.PNG",
-    "./imagens/Logo.png",
-    "imagens/Logo.png",
-    logoAsset, // The bundled relative asset compiled by Vite 
-    "/imagens/logo.png"
-  ];
+  const [logoSrc, setLogoSrc] = React.useState(() => getImagePath('imagens/logo.png'));
+  const [hasFailedOnce, setHasFailedOnce] = React.useState(false);
+  const [hasFailedAll, setHasFailedAll] = React.useState(false);
 
-  const currentSrc = possiblePaths[logoSrcIdx];
+  const handleError = () => {
+    if (!hasFailedOnce) {
+      setHasFailedOnce(true);
+      setLogoSrc(logoAsset);
+    } else {
+      setHasFailedAll(true);
+    }
+  };
 
-  if (logoSrcIdx < possiblePaths.length) {
+  if (!hasFailedAll) {
     return (
       <img 
-        src={currentSrc} 
+        src={logoSrc} 
         alt="Contabilidade Nobel" 
         className={`${className} object-contain`}
-        onError={() => setLogoSrcIdx(prev => prev + 1)}
+        onError={handleError}
         referrerPolicy="no-referrer"
       />
     );
