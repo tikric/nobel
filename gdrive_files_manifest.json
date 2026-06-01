@@ -1,0 +1,101 @@
+{
+  "folders": [],
+  "files": [
+    {
+      "id": "1HfmOOl_QvHepT1IOBCQm6jxfDihCrxH-",
+      "name": ".vscode",
+      "mime": "application\\/vnd.google-apps.folder",
+      "parentPath": ""
+    },
+    {
+      "id": "1GsyqNdaOgNdRHOikOZQiqBOSGmmkou1I",
+      "name": "src",
+      "mime": "application\\/vnd.google-apps.folder",
+      "parentPath": ""
+    },
+    {
+      "id": "1X3-3LaGyqEE4tO0Btzcv6eABEOupbZWa",
+      "name": ".env.example",
+      "mime": "application\\/octet-stream",
+      "parentPath": ""
+    },
+    {
+      "id": "1V468f021MgFRW_oIr5rPwf_g-fh-z7Xg",
+      "name": ".gitignore",
+      "mime": "application\\/octet-stream",
+      "parentPath": ""
+    },
+    {
+      "id": "1nuvnWOovR5idCBNVocsm9Ht90Ruqe6d5",
+      "name": "AGENTS.md",
+      "mime": "text\\/markdown",
+      "parentPath": ""
+    },
+    {
+      "id": "1VLCAuGWL6-JNqNGUAI3Y3GyvV1LHv7Q_",
+      "name": "bun.lock",
+      "mime": "application\\/octet-stream",
+      "parentPath": ""
+    },
+    {
+      "id": "11kDJ2bdn8mj2y1A6rUeinihlxgiy4MgB",
+      "name": "CLAUDE.md",
+      "mime": "text\\/markdown",
+      "parentPath": ""
+    },
+    {
+      "id": "1sYZTEdbZ5Eoi49cYwK-voE5jZGOBkoJh",
+      "name": "components.json",
+      "mime": "application\\/json",
+      "parentPath": ""
+    },
+    {
+      "id": "13hLsQT0IGLtBqXG1PbkoURQw5f385t3p",
+      "name": "eslint.config.mjs",
+      "mime": "text\\/javascript",
+      "parentPath": ""
+    },
+    {
+      "id": "1zTMKIHhhRfdNIGcMKIKy3fWyJeTpIzSg",
+      "name": "next-env.d.ts",
+      "mime": "video\\/vnd.dlna.mpeg-tts",
+      "parentPath": ""
+    },
+    {
+      "id": "11gLjZE79BOrRbYf8pP6DW9RAhRcO2Tq5",
+      "name": "next.config.ts",
+      "mime": "video\\/vnd.dlna.mpeg-tts",
+      "parentPath": ""
+    },
+    {
+      "id": "1qU76zPzR-HUrDOdYNz28Ay6X7qFrX33e",
+      "name": "package.json",
+      "mime": "application\\/json",
+      "parentPath": ""
+    },
+    {
+      "id": "1bWGmW2D_L23fc12ZfOf1WZX-nyNIN8VP",
+      "name": "pnpm-lock.yaml",
+      "mime": "application\\/octet-stream",
+      "parentPath": ""
+    },
+    {
+      "id": "1oBAFS0E8g0knMK6i8S6g_BwiKlgBgSqm",
+      "name": "postcss.config.mjs",
+      "mime": "text\\/javascript",
+      "parentPath": ""
+    },
+    {
+      "id": "16TvNNpZ1A0k8f75_vFY2M7GcfWcZCgzL",
+      "name": "README.md",
+      "mime": "text\\/markdown",
+      "parentPath": ""
+    },
+    {
+      "id": "1QvzG8AB-6y8RnI6_0AAKkQWJqdHnYZLe",
+      "name": "tsconfig.json",
+      "mime": "application\\/json",
+      "parentPath": ""
+    }
+  ]
+}
