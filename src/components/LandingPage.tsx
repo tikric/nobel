@@ -27,7 +27,7 @@ import {
 import { motion } from 'motion/react';
 import { landingServices, landingTestimonials } from '../data';
 import NobelLogo from './NobelLogo';
-import erikaPortraitAsset from '@/assets/images/erika_portrait_1780340940376.png';
+import erikaPortraitAsset from '@/assets/images/erika.png';
 
 interface LandingPageProps {
   onEnterPlatform: () => void;
