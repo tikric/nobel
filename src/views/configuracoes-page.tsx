@@ -33,9 +33,26 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { toast } from "sonner";
+import { generatePlatformManualPDF } from "@/lib/pdf-generator";
 
 export default function ConfiguracoesPage() {
   const [saving, setSaving] = React.useState(false);
+
+  const handleDownloadManual = () => {
+    toast.promise(
+      new Promise((resolve) => {
+        setTimeout(() => {
+          generatePlatformManualPDF();
+          resolve(true);
+        }, 800);
+      }),
+      {
+        loading: "Compilando manual oficial em formato PDF...",
+        success: "PDF do Manual Operacional baixado com sucesso!",
+        error: "Erro ao gerar PDF",
+      }
+    );
+  };
 
   // Backup-specific states
   const [backups, setBackups] = React.useState<any[]>(() => {
@@ -167,19 +184,30 @@ export default function ConfiguracoesPage() {
             Configure o sistema, APIs e preferencias
           </p>
         </div>
-        <Button onClick={handleSave} disabled={saving}>
-          {saving ? (
-            <>
-              <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
-              Salvando...
-            </>
-          ) : (
-            <>
-              <Save className="h-4 w-4 mr-2" />
-              Salvar Alteracoes
-            </>
-          )}
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-2.5">
+          <Button 
+            onClick={handleDownloadManual}
+            variant="outline" 
+            className="border-amber-500/40 text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/20 font-black h-10 px-4"
+          >
+            <Download className="h-4 w-4 mr-2 text-amber-500 animate-pulse" />
+            Baixar Manual PDF Completo
+          </Button>
+
+          <Button onClick={handleSave} disabled={saving} className="h-10 px-4">
+            {saving ? (
+              <>
+                <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
+                Salvando...
+              </>
+            ) : (
+              <>
+                <Save className="h-4 w-4 mr-2" />
+                Salvar Alterações
+              </>
+            )}
+          </Button>
+        </div>
       </div>
 
       {/* Tabs de configuracao */}

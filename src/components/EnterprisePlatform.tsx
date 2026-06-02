@@ -71,6 +71,7 @@ import NobelLogo from './NobelLogo';
 import { ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
 import { categoriasProspect } from '../lib/mock-data';
 import { toast } from 'sonner';
+import { generatePlatformManualPDF } from '../lib/pdf-generator';
 
 const itensPorPagina = 10;
 const formatCurrency = (amount: number) => {
@@ -4250,12 +4251,37 @@ export default function EnterprisePlatform({ onBackToLanding, theme, toggleTheme
                     </p>
                   </div>
                 </div>
-                <button 
-                  onClick={() => setIsHelpOpen(false)} 
-                  className="p-1 px-3 bg-slate-100 dark:bg-slate-800 hover:bg-rose-500/10 hover:text-rose-500 rounded-lg text-slate-500 font-bold transition-all border-none cursor-pointer text-xs"
-                >
-                  Fechar ✕
-                </button>
+                <div className="flex items-center gap-2">
+                  <button 
+                    onClick={() => {
+                      toast.promise(
+                        new Promise((resolve) => {
+                          setTimeout(() => {
+                            generatePlatformManualPDF();
+                            resolve(true);
+                          }, 800);
+                        }),
+                        {
+                          loading: "Compilando manual oficial em formato PDF...",
+                          success: "PDF do Manual Operacional baixado com sucesso!",
+                          error: "Erro ao gerar PDF",
+                        }
+                      );
+                    }}
+                    className="p-1.5 px-3.5 bg-amber-500/10 dark:bg-amber-500/25 text-amber-600 dark:text-amber-400 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-600 rounded-lg font-black transition-all border border-amber-500/20 cursor-pointer text-xs flex items-center gap-1.5 h-8.5"
+                    title="Baixar Manual Completo em PDF"
+                  >
+                    <Download className="w-3.5 h-3.5 text-amber-500 group-hover:text-white" />
+                    <span>Baixar Manual PDF</span>
+                  </button>
+
+                  <button 
+                    onClick={() => setIsHelpOpen(false)} 
+                    className="p-1.5 px-3 bg-slate-100 dark:bg-slate-800 hover:bg-rose-500/10 hover:text-rose-500 rounded-lg text-slate-500 font-bold transition-all border-none cursor-pointer text-xs h-8.5"
+                  >
+                    Fechar ✕
+                  </button>
+                </div>
               </div>
 
               {/* Selector Tabs Inside Modal */}
