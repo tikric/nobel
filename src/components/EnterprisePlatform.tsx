@@ -1408,6 +1408,31 @@ export default function EnterprisePlatform({ onBackToLanding, theme, toggleTheme
           </div>
 
           <div className="flex items-center gap-3">
+            {/* Direct PDF Download Button */}
+            <button 
+              onClick={() => {
+                toast.promise(
+                  new Promise((resolve) => {
+                    setTimeout(() => {
+                      generatePlatformManualPDF();
+                      resolve(true);
+                    }, 800);
+                  }),
+                  {
+                    loading: "Compilando manual oficial em formato PDF...",
+                    success: "PDF do Manual Operacional baixado com sucesso!",
+                    error: "Erro ao gerar PDF",
+                  }
+                );
+              }}
+              className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-extrabold text-xs px-4 py-2 rounded-full shadow-md hover:shadow-lg hover:scale-102 active:scale-98 transition-all border-none cursor-pointer"
+              title="Baixar Manual Completo em PDF"
+            >
+              <Download className="w-4 h-4 animate-bounce" />
+              <span className="hidden md:inline">Baixar Manual PDF</span>
+              <span className="md:hidden">Manual PDF</span>
+            </button>
+
             {/* Global Search */}
             <div className="hidden lg:flex items-center gap-2 bg-slate-100 dark:bg-slate-800 px-3.5 py-2 rounded-full border border-slate-200 dark:border-slate-700 w-64">
               <Search className="w-4 h-4 text-slate-400" />
