@@ -102,7 +102,7 @@ export default function LoginGate({ onSuccess, onCancel }: LoginGateProps) {
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center z-10">
         <div className="flex justify-center mb-4">
-          <NobelLogo className="h-14 sm:h-16" />
+          <NobelLogo className="h-20 sm:h-24 md:h-28" />
         </div>
         <p className="mt-1 text-xs text-slate-500 font-bold uppercase tracking-wider">
           Acesso Restrito · Cockpit Executivo

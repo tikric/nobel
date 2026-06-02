@@ -85,7 +85,7 @@ export default function LandingPage({ onEnterPlatform, informativos }: LandingPa
       <nav id="navbar" className="fixed top-0 left-0 right-0 z-[1000] px-6 py-4 bg-white/94 backdrop-blur-md border-b border-[#0C3E26]/10 transition-all duration-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-            <NobelLogo className="h-10 sm:h-12" />
+            <NobelLogo className="h-14 sm:h-16" />
           </a>
 
           <div className="hidden md:flex gap-8 items-center">

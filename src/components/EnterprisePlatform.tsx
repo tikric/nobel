@@ -1247,7 +1247,7 @@ export default function EnterprisePlatform({ onBackToLanding, theme, toggleTheme
         {/* Sidebar Header */}
         <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
           <div className="flex items-center">
-            <NobelLogo className="h-9 text-left" isDarkTheme={theme === 'dark'} />
+            <NobelLogo className="h-14 md:h-16 text-left" isDarkTheme={theme === 'dark'} />
           </div>
           <button onClick={() => setMobileMenuOpen(false)} className="md:hidden text-slate-500 hover:text-slate-800 dark:hover:text-slate-200">
             <XIcon className="w-5 h-5" />
