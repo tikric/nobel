@@ -147,7 +147,7 @@ export default function LandingPage({ onEnterPlatform, informativos }: LandingPa
             className="text-sm sm:text-base md:text-lg text-[#4a6354] max-w-2xl leading-relaxed mb-10"
           >
             Transformamos obrigações em decisões estratégicas de alto impacto. Combinamos automação de ponta, 
-            contabilidade consultiva sob a liderança da Dra. Érika e inteligência artificial para amparar sua empresa.
+            contabilidade consultiva sob a liderança da Sra. Érika e inteligência artificial para amparar sua empresa.
           </motion.p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl mb-12">
@@ -313,7 +313,7 @@ export default function LandingPage({ onEnterPlatform, informativos }: LandingPa
                 />
               </div>
               <div className="text-center z-10 bg-[#0C3E26]/10 px-4 py-2.5 rounded-xl border border-[#0C3E26]/10 shadow-sm max-w-[340px] w-full flex flex-col items-center justify-center">
-                <p className="font-display font-black text-base text-[#0C3E26] tracking-wide m-0">Dra. Érika Blank</p>
+                <p className="font-display font-black text-base text-[#0C3E26] tracking-wide m-0">Sra. Érika Blank</p>
                 <div className="mt-1.5 px-3.5 py-1 bg-[#D4AF37] text-[#0C3E26] rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm">Contadora</div>
               </div>
             </div>
@@ -321,7 +321,7 @@ export default function LandingPage({ onEnterPlatform, informativos }: LandingPa
             <div className="lg:col-span-7 space-y-6 text-left">
               <span className="text-xs font-bold uppercase tracking-wider text-white bg-[#0C3E26] px-4 py-1.5 rounded-full inline-block shadow-sm">Diretora Técnica & Fundadora</span>
               <h3 className="font-display font-black text-3xl sm:text-4xl text-[#0f2115]">
-                Conheça a Dra. Érika
+                Conheça a Sra. Érika
               </h3>
               <p className="text-xs sm:text-sm text-[#D4AF37] font-extrabold uppercase tracking-widest bg-[#0C3E26]/5 py-1 px-3.5 rounded inline-block">
                 Mais de 25 Anos de Atuação no Setor Contábil
@@ -336,13 +336,13 @@ export default function LandingPage({ onEnterPlatform, informativos }: LandingPa
               
               <div className="pt-6 border-t border-[#0C3E26]/10 flex flex-col sm:flex-row gap-5 items-start sm:items-center">
                 <a 
-                  href="https://wa.me/5511999999999" 
+                  href="https://wa.me/5538999875326" 
                   target="_blank" 
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 font-black text-xs bg-[#0C3E26] hover:bg-[#128C54] text-white px-6 py-3.5 rounded-full shadow-md text-decoration-none transition-all hover:translate-x-1"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>Falar com a Dra. Érika</span>
+                  <span>Falar com a Sra. Érika</span>
                 </a>
                 <div className="text-xs text-[#627d6d] font-medium italic">
                   "Nosso compromisso é ajudar o gestor a pagar o menor imposto legal e prosperar."
@@ -706,7 +706,7 @@ export default function LandingPage({ onEnterPlatform, informativos }: LandingPa
         <div className="mb-8"></div>
 
         <a 
-          href="https://wa.me/553832155494" 
+          href="https://wa.me/5538999875326" 
           target="_blank" 
           rel="noreferrer" 
           className="bg-[#25d366] hover:bg-[#128c7e] text-white font-black text-sm xs:text-base px-8 xs:px-10 py-3.5 xs:py-4 rounded-full inline-flex items-center gap-3 shadow-xl hover:-translate-y-1 transition-all text-decoration-none"
@@ -738,7 +738,7 @@ export default function LandingPage({ onEnterPlatform, informativos }: LandingPa
             </div>
             <p className="text-xs sm:text-sm font-medium text-[#DFBA5E]/90 leading-relaxed max-w-sm">
               Mais de uma década simplificando a contabilidade de pequenas, médias e grandes empresas brasileiras 
-              com integridade jurídica de Dra. Érika e tecnologia inteligente avançada.
+              com integridade jurídica de Sra. Érika e tecnologia inteligente avançada.
             </p>
             <div className="flex gap-3.5 pt-2">
               <a href="https://www.instagram.com/contabilidadenobel/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#E5C158]/10 border border-[#E5C158]/30 flex items-center justify-center text-[#E5C158] hover:bg-[#E5C158] hover:text-[#041A0E] hover:scale-105 transition-all"><Instagram className="w-5 h-5 font-bold" /></a>
@@ -761,7 +761,7 @@ export default function LandingPage({ onEnterPlatform, informativos }: LandingPa
             <div className="font-extrabold text-xs uppercase tracking-wider text-[#E5C158] mb-4 text-left border-b border-[#E5C158]/20 pb-1">Empresa</div>
             <ul className="list-none flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#DFBA5E]/90 text-left p-0">
               <li><a href="#sobre" className="hover:text-white transition-colors text-current text-decoration-none">Sobre Nós</a></li>
-              <li><a href="#sobre" className="hover:text-white transition-colors text-current text-decoration-none">Dra. Érika Nobel</a></li>
+              <li><a href="#sobre" className="hover:text-white transition-colors text-current text-decoration-none">Sra. Érika Nobel</a></li>
               <li><a href="#depoimentos" className="hover:text-white transition-colors text-current text-decoration-none">Depoimentos</a></li>
               <li><a href="#informativos" className="hover:text-white transition-colors text-current text-decoration-none">Informativos Fiscais</a></li>
             </ul>

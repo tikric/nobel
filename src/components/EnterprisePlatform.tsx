@@ -522,7 +522,7 @@ export default function EnterprisePlatform({ onBackToLanding, theme, toggleTheme
   // Organization Details (Settings)
   const [razaoSocial, setRazaoSocial] = useState('Contabilidade Nobel Enterprise LTDA.');
   const [nomeMarca, setNomeMarca] = useState('Nobel Contabilidade');
-  const [telefoneAtendimento, setTelefoneAtendimento] = useState('(11) 98834-2201');
+  const [telefoneAtendimento, setTelefoneAtendimento] = useState('(38) 99987-5326');
   const [emailCorporativo, setEmailCorporativo] = useState('retaguarda@nobelcontabilidade.com.br');
   const [googleDriveLink, setGoogleDriveLink] = useState('https://drive.google.com/drive/folders/1FSvponZUXZ8SPwaRa960WaWY3ivvgpGR?usp=sharing');
 
@@ -1029,7 +1029,7 @@ export default function EnterprisePlatform({ onBackToLanding, theme, toggleTheme
   const handleGenerateEmailWithIA = async () => {
     setEmailIsLoading(true);
     setEmailOutput('');
-    const prompt = `Crie um e-mail corporativo persuasivo e altamente estruturado do tipo "${emailTipo}" para a empresa "${emailDestinatario}" atuante no segmento de "${emailSegmento}". O e-mail deve detalhar e destacar especificamente este benefício/proposta real: "${emailDestaque}". Escreva em português, com vocabulário impecável, tom fiduciário de alta performance e excelente chamada de conversão comercial. Assinado pela Dra. Érika Nobel e equipe da Contabilidade Nobel. Comece o texto de resposta obrigatoriamente com "[Assunto: Seu Assunto Aqui]" de maneira identificável.`;
+    const prompt = `Crie um e-mail corporativo persuasivo e altamente estruturado do tipo "${emailTipo}" para a empresa "${emailDestinatario}" atuante no segmento de "${emailSegmento}". O e-mail deve detalhar e destacar especificamente este benefício/proposta real: "${emailDestaque}". Escreva em português, com vocabulário impecável, tom fiduciário de alta performance e excelente chamada de conversão comercial. Assinado pela Sra. Érika Nobel e equipe da Contabilidade Nobel. Comece o texto de resposta obrigatoriamente com "[Assunto: Seu Assunto Aqui]" de maneira identificável.`;
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
@@ -1040,7 +1040,7 @@ export default function EnterprisePlatform({ onBackToLanding, theme, toggleTheme
       const data = await response.json();
       setEmailOutput(data.reply);
     } catch (e) {
-      const fallback = `[Assunto: Maximização de Caixa e Proteção Fiscal para ${emailDestinatario}]\n\nPrezada diretoria da ${emailDestinatario},\n\nEm nome da Dra. Érika Nobel e equipe da Contabilidade Nobel corporativa, contatamos seu escritório no segmento de ${emailSegmento} com propostas de alto nível.\n\nIdentificamos uma oportunidade exclusiva de alívio fiscal fundamentada no benefício de:\n👉 ${emailDestaque}\n\nOferecemos um mapeamento de créditos fiscais e passivos tributários integralmente sem custos para sua imobiliária nas próximas 24 horas.\n\nQual é o melhor telefone de contato de sua assessoria?\n\nCordiais saudações,\n\nDra. Érika Nobel\nFounder & Contadora Nobel AI`;
+      const fallback = `[Assunto: Maximização de Caixa e Proteção Fiscal para ${emailDestinatario}]\n\nPrezada diretoria da ${emailDestinatario},\n\nEm nome da Sra. Érika Nobel e equipe da Contabilidade Nobel corporativa, contatamos seu escritório no segmento de ${emailSegmento} com propostas de alto nível.\n\nIdentificamos uma oportunidade exclusiva de alívio fiscal fundamentada no benefício de:\n👉 ${emailDestaque}\n\nOferecemos um mapeamento de créditos fiscais e passivos tributários integralmente sem custos para sua imobiliária nas próximas 24 horas.\n\nQual é o melhor telefone de contato de sua assessoria?\n\nCordiais saudações,\n\nSra. Érika Nobel\nFounder & Contadora Nobel AI`;
       setEmailOutput(fallback);
     } finally {
       setEmailIsLoading(false);
@@ -1066,7 +1066,7 @@ export default function EnterprisePlatform({ onBackToLanding, theme, toggleTheme
       const data = await response.json();
       setPolidorOutput(data.reply);
     } catch (e) {
-      const fallback = `[Rascunho Polido - Versão Final Nobel]\n\nPrezados parceiros, gostaríamos de formalizar os ajustes operacionais executados na presente apuração de tributos. Em observância estrita aos preceitos e as melhores práticas fiscais do corrente ano de 2026, otimizamos as guias para elisão tributária legítima.\n\nAtenciosamente, Dra. Érika Nobel e Assessoria.`;
+      const fallback = `[Rascunho Polido - Versão Final Nobel]\n\nPrezados parceiros, gostaríamos de formalizar os ajustes operacionais executados na presente apuração de tributos. Em observância estrita aos preceitos e as melhores práticas fiscais do corrente ano de 2026, otimizamos as guias para elisão tributária legítima.\n\nAtenciosamente, Sra. Érika Nobel e Assessoria.`;
       setPolidorOutput(fallback);
     } finally {
       setPolidorIsLoading(false);
@@ -1089,7 +1089,7 @@ export default function EnterprisePlatform({ onBackToLanding, theme, toggleTheme
       topicDesc = "Pitch de Vendas Comercial para Imóvel: Criar uma descrição de alta conversão emocional com técnicas de copywriting contábil-financeiro para atrair compradores inteligentes";
     }
 
-    const prompt = `Como parceiro de planejamento estratégico e contábil sênior da Dra. Érika Nobel com soluções exclusivas para Imobiliárias, forneça uma análise consultiva extraordinária e um plano surpreendente sobre o seguinte tópico: "${topicDesc}". Use este contexto real do usuário imobiliário: "${imobiliairaInput}". Traga tabelas de cálculo se pertinente, as leis aplicáveis, e uma estratégia de negócios matadora para impressionar e encantar. Escreva em português de forma clara, altamente fluida e profissional.`;
+    const prompt = `Como parceiro de planejamento estratégico e contábil sênior da Sra. Érika Nobel com soluções exclusivas para Imobiliárias, forneça uma análise consultiva extraordinária e um plano surpreendente sobre o seguinte tópico: "${topicDesc}". Use este contexto real do usuário imobiliário: "${imobiliairaInput}". Traga tabelas de cálculo se pertinente, as leis aplicáveis, e uma estratégia de negócios matadora para impressionar e encantar. Escreva em português de forma clara, altamente fluida e profissional.`;
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
@@ -1102,11 +1102,11 @@ export default function EnterprisePlatform({ onBackToLanding, theme, toggleTheme
     } catch (e) {
       let fallback = `🏡 [Planejador Imobiliário Nobel AI - Análise Estratégica]\n\n`;
       if (imobiliairaTopic === 'holding') {
-        fallback += `📌 VANTAGEM HOLDING PATRIMONIAL (BENS PRÓPRIOS)\n\n1. ANÁLISE DE IMPACTO FISCAL:\n  - Tributação de Aluguéis no CPF: Alíquota máxima progressiva atinge 27.5% mais recolhimento mensal (Carnê-Leão).\n  - Tributação na Holding Patrimonial: Se enquadrada no Lucro Presumido, a carga efetiva combinada de PIS, COFINS, IRPJ e CSLL totaliza 11.33% a 14.53% s/ faturamento bruto.\n\n2. CÁLCULO DE ECONOMIA:\n  Para um faturamento de aluguel mensal de R$ 10.000,00:\n  - No CPF: Imposto mensal aproximado de R$ 2.100,00.\n  - Na Holding: Imposto mensal aproximado de R$ 1.133,00.\n  - Economia Líquida Anual: R$ 11.604,00 além de proteção de ativos no Planejamento Sucessório Familiar!\n\n3. IMPLEMENTAÇÃO:\n  Para colocar isso em prática agora, contate Dra. Érika para abertura da holding e conferência de bens à empresa com imunidade de ITBI.`;
+        fallback += `📌 VANTAGEM HOLDING PATRIMONIAL (BENS PRÓPRIOS)\n\n1. ANÁLISE DE IMPACTO FISCAL:\n  - Tributação de Aluguéis no CPF: Alíquota máxima progressiva atinge 27.5% mais recolhimento mensal (Carnê-Leão).\n  - Tributação na Holding Patrimonial: Se enquadrada no Lucro Presumido, a carga efetiva combinada de PIS, COFINS, IRPJ e CSLL totaliza 11.33% a 14.53% s/ faturamento bruto.\n\n2. CÁLCULO DE ECONOMIA:\n  Para um faturamento de aluguel mensal de R$ 10.000,00:\n  - No CPF: Imposto mensal aproximado de R$ 2.100,00.\n  - Na Holding: Imposto mensal aproximado de R$ 1.133,00.\n  - Economia Líquida Anual: R$ 11.604,00 além de proteção de ativos no Planejamento Sucessório Familiar!\n\n3. IMPLEMENTAÇÃO:\n  Para colocar isso em prática agora, contate Sra. Érika para abertura da holding e conferência de bens à empresa com imunidade de ITBI.`;
       } else if (imobiliairaTopic === 'ganho_capital') {
         fallback += `💸 ISENÇÃO DE GANHO DE CAPITAL SOBRE VENDA DE IMÓVEIS (LEI DE BENS RESIDENCIAIS)\n\n1. REQUISITO DE ISENÇÃO TRIBUTÁRIA:\n  Baseado no Artigo 39 da Lei nº 11.196/2005, o lucro obtido na alienação de imóvel residencial estará isento de Imposto de Renda caso o vendedor utilize o produto total da venda para adquirir outro imóvel residencial localizado no país em até 180 dias contados da celebração do contrato de venda original.\n\n2. SEU CASO IMOBILIÁRIO:\n  - Valor de Aquisição: R$ 350.000,00\n  - Valor de Alienação Praticado: R$ 850.000,00\n  - Lucro de Ganho de Capital: R$ 500.000,00\n  - Sem Planejamento: Alíquota de IR de 15% representaria R$ 75.000,00 pagos ao Leão.\n  - Com Planejamento Nobel (Isenção 180 dias): Reaplicando os R$ 850.000,00 totais no prazo legal, seu lucro imobiliário final tem IMPOSTO ZERO.`;
       } else {
-        fallback += `🎯 LINHA DE COMUNICAÇÃO RECOMENDADA PARA IMOBILIÁRIAS:\n\nCom base na entrada "${imobiliairaInput}", estruturamos um pitch emocional de venda focando em segurança patrimonial, elisão tributária inteligente e alta taxa de capitalização para investidores compradores. Agende um bate-papo técnico com Dra. Érika para validar seu funil de negócios.`;
+        fallback += `🎯 LINHA DE COMUNICAÇÃO RECOMENDADA PARA IMOBILIÁRIAS:\n\nCom base na entrada "${imobiliairaInput}", estruturamos um pitch emocional de venda focando em segurança patrimonial, elisão tributária inteligente e alta taxa de capitalização para investidores compradores. Agende um bate-papo técnico com Sra. Érika para validar seu funil de negócios.`;
       }
       setImobiliairaOutput(fallback);
     } finally {
@@ -2700,7 +2700,7 @@ export default function EnterprisePlatform({ onBackToLanding, theme, toggleTheme
                           AI
                         </div>
                         <div className="p-4 rounded-2xl text-xs bg-slate-100 dark:bg-slate-900 italic text-slate-500 animate-pulse text-left">
-                          Dra. Érika AI está calculando sua resposta fiduciária sênior...
+                          Sra. Érika AI está calculando sua resposta fiduciária sênior...
                         </div>
                       </div>
                     )}
@@ -4397,7 +4397,7 @@ export default function EnterprisePlatform({ onBackToLanding, theme, toggleTheme
               <div className="border-t border-slate-100 dark:border-slate-800 pt-4 mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-450 dark:text-slate-400 font-bold">
                 <div>© 2026 Contabilidade Nobel | Suporte: contato@contabilidadenobel.com.br</div>
                 <a 
-                  href="https://wa.me/553832155494" 
+                  href="https://wa.me/5538999875326" 
                   target="_blank" 
                   rel="noreferrer"
                   className="bg-[#25d366] hover:bg-[#128c7e] text-white px-3.5 py-1.5 rounded-lg flex items-center gap-1.5 text-decoration-none shadow-sm cursor-pointer transition-colors"

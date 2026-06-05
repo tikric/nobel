@@ -275,7 +275,7 @@ export const landingTestimonials = [
   },
   {
     text: "O acesso à plataforma deles é fenomenal. Consigo baixar todas as certidões e guias consolidadas pelo celular em segundos. Além disso, o suporte do time Nobel via IA integrada nos poupa inúmeras horas mensais.",
-    name: "Dra. Maria Santos",
+    name: "Sra. Maria Santos",
     role: "Diretora Clínica São Rafael",
     avatar: "MS"
   },

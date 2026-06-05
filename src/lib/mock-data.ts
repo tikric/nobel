@@ -45,7 +45,7 @@ export const mockClientes: Cliente[] = [
     estado: 'MG',
     telefone: '(38) 99999-5678',
     email: 'financeiro@clinicasaolucas.com.br',
-    responsavel: 'Dra. Maria Santos',
+    responsavel: 'Sra. Maria Santos',
     dataEntrada: '2021-07-22',
     situacao: 'Ativo',
     servicosContratados: ['Contabilidade', 'Fiscal'],
@@ -143,7 +143,7 @@ export const mockColaboradores: Colaborador[] = [
 export const mockProspects: Prospect[] = [
   { id: '1', nomeEmpresa: 'Drogaria Sao Sebastiao', cidade: 'Montes Claros', categoria: 'Farmacias e Drogarias', faturamentoEstimado: 2500000, regimeProbavel: 'Simples', contato: 'Roberto Nunes', canal: 'Google', etapa: 'Negociacao', scorePotencial: 85, observacoes: 'Interessado em servicos completos', dataCriacao: '2025-05-10' },
   { id: '2', nomeEmpresa: 'Construtora Vale do Sao Francisco', cidade: 'Pirapora', categoria: 'Construtoras e Incorporadoras', faturamentoEstimado: 8000000, regimeProbavel: 'Lucro Presumido', contato: 'Eng. Marcos Pereira', canal: 'Indicacao', etapa: 'PropostaEnviada', scorePotencial: 92, observacoes: 'Obra grande em andamento', dataCriacao: '2025-05-15' },
-  { id: '3', nomeEmpresa: 'Clinica Odontologica Sorriso', cidade: 'Bocaiuva', categoria: 'Consultorios Odontologicos', faturamentoEstimado: 800000, regimeProbavel: 'Simples', contato: 'Dra. Carla Rodrigues', canal: 'ColdCall', etapa: 'ContatoInicial', scorePotencial: 78, observacoes: 'Primeiro contato realizado', dataCriacao: '2025-05-20' },
+  { id: '3', nomeEmpresa: 'Clinica Odontologica Sorriso', cidade: 'Bocaiuva', categoria: 'Consultorios Odontologicos', faturamentoEstimado: 800000, regimeProbavel: 'Simples', contato: 'Sra. Carla Rodrigues', canal: 'ColdCall', etapa: 'ContatoInicial', scorePotencial: 78, observacoes: 'Primeiro contato realizado', dataCriacao: '2025-05-20' },
   { id: '4', nomeEmpresa: 'Restaurante Tempero Caseiro', cidade: 'Januaria', categoria: 'Restaurantes e Lanchonetes', faturamentoEstimado: 400000, regimeProbavel: 'MEI', contato: 'Seu Jose', canal: 'Redes', etapa: 'FechadoGanho', scorePotencial: 70, observacoes: 'Cliente fechado em maio', dataCriacao: '2025-04-25' },
 ];
 
